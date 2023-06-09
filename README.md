@@ -27,7 +27,7 @@ And put it into the **train** folder if you don't want to train your own model b
 - If you are the normal user only want to see the result of rating.
 
 you can just see the [main.py](https://github.com/hjhjhjhhjhjhhh/movie-recommendation-base-on-imdb-review/blob/master/main.py) file
-in the line 162-169, you can put your own **url** in line 162 and run the **main.py**.
+in the line 165-172, you can put your own **url** in line 165 and run the **main.py**.
 ```python
 url = input("please the link of a movie review: ")
 ```
