@@ -46,9 +46,11 @@ def main(url):
             total += 1
             if(label1[i] == 1):
                 positive += 1
+
+        print("Movie: ", fname)
         print("From Bert prediction")
         print(f'In total {total} comments, {positive} comments are positive, {100 * positive / total}% people think it is a good movie')
-        print(f'averge rate of 200 comments is {sum(rating) / len(rating)}')
+        print(f'averge rate of {total} comments is {sum(rating) / len(rating)}')
 
     def LSTM():
         print("lstm start")
@@ -143,8 +145,9 @@ def main(url):
             if cnt >=200:
                 break
             # 用戶評論必須同時具備rating和title的資料，否則略過並尋找下一筆
+            fname = driver.find_element(By.CLASS_NAME, 'parent').text
             frating = review[n].find_element(By.CLASS_NAME, 'rating-other-user-rating').text
-            flist = review[n].find_element(By.CLASS_NAME, 'title').text
+            flist = review[n].find_element(By.CLASS_NAME, 'show-more__control').text[0:200]
 
             rating.append(frating)
             lis.append(flist)
@@ -167,9 +170,3 @@ except LookupError:
     nltk.download('stopwords')
     nltk.download('punkt')
     main(url)
-
-
-
-
-            
-    
